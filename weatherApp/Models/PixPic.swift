@@ -13,10 +13,9 @@ struct PixPic: Codable {
 }
 
 
-struct Pic: Codable {
+struct Pic: Codable & Equatable {
     let id: Int
     let pageURL: String
-    let type: String
     let webformatURL: String
     let largeImageURL: String
 }

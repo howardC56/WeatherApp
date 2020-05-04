@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
                 }
                 
             case .failure(let error):
-                self.showAlert(title: "Error", message: "\(error.localizedDescription)")
+                self.showAlert(title: "Error Getting Lat Long", message: "\(error.localizedDescription)")
             }
         }
     }

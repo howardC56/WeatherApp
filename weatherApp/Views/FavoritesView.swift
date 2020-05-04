@@ -9,13 +9,30 @@
 import UIKit
 
 class FavoritesView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    public lazy var tableView: UITableView = {
+           let tableV = UITableView()
+           tableV.rowHeight = 100
+           tableV.backgroundColor = .white
+           return tableV
+       }()
+    
+    override init(frame:CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func commonInit() {
+        tableViewSetup()
+    }
+    
+    private func tableViewSetup() {
+        addSubview(tableView)
+        tableView.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor)
+    }
 
 }
