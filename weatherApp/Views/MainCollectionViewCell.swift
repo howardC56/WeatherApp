@@ -19,6 +19,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         image.loopMode = .loop
         image.backgroundBehavior = .pauseAndRestore
         image.contentMode = .scaleAspectFit
+        image.shouldRasterizeWhenIdle = true
         return image
     }()
     
