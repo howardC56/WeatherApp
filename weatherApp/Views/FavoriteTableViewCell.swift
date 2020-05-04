@@ -41,6 +41,8 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     public func configureCell(pic: Pic) {
-        tableImage.kf.setImage(with: URL(string: pic.webformatURL))
+        DispatchQueue.main.async {
+            self.tableImage.kf.setImage(with: URL(string: pic.webformatURL))
+        }
     }
 }

@@ -109,7 +109,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         cell.configureCell(weather: current)
         return cell
     }
-    
+            
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let pickedWeather = weathers[indexPath.row]
         navigationController?.pushViewController(DetailViewController(pickedWeather: pickedWeather, placeName: place, data: dataPersistence), animated: true)

@@ -10,6 +10,7 @@ import UIKit
 import DataPersistence
 import Kingfisher
 
+
 class DetailViewController: UIViewController {
     
     let detailView = DetailView()
@@ -91,16 +92,20 @@ class DetailViewController: UIViewController {
     }
     
     private func ifFavorited(pic: Pic) {
-        if dataPersistence.hasItemBeenSaved(pic) {
-            favorite.image = UIImage(systemName: "star.filled")
+        DispatchQueue.main.async {
+            if self.dataPersistence.hasItemBeenSaved(pic) {
+                self.favorite.image = UIImage(systemName: "star.filled")
         } else {
-            favorite.image = UIImage(systemName: "star")
+                self.favorite.image = UIImage(systemName: "star")
+        }
         }
     }
     
     private func configureDetails() {
-        if let picked = pickedWeather {
-            detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater()) \nLow: \(picked.temperatureLow.temperatureFormater()) \nWind Speed: \(picked.windSpeed) mph \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
+        DispatchQueue.main.async {
+            if let picked = self.pickedWeather {
+                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater()) \nLow: \(picked.temperatureLow.temperatureFormater()) \nWind Speed: \(picked.windSpeed) mph \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
     }
     }
+}
 }

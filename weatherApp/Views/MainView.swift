@@ -28,7 +28,7 @@ class MainView: UIView {
         layout.itemSize = CGSize(width: frame.width / 3, height: frame.height / 3)
         layout.sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .white
+        cv.backgroundColor = .systemTeal
         return cv
     }()
     
@@ -42,7 +42,7 @@ class MainView: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .systemTeal
         searchBarSetup()
         collectionViewSetup()
     }

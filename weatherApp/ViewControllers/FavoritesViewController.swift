@@ -20,9 +20,10 @@ class FavoritesViewController: UIViewController {
     }
     
     init(dataPersistence: DataPersistence<Pic>) {
-           self.dataPersistence = dataPersistence
-           super.init(nibName: nil, bundle: nil)
-       }
+        self.dataPersistence = dataPersistence
+        super.init(nibName: nil, bundle: nil)
+        self.dataPersistence.delegate = self
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -39,6 +40,8 @@ class FavoritesViewController: UIViewController {
         favoriteView.tableView.delegate = self
         favoriteView.tableView.dataSource = self
         favoriteView.tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: "FavoriteTableViewCell")
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
+        navigationController?.navigationBar.barTintColor = .black
     }
     
     private func loadFavorites() {
@@ -68,5 +71,15 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
 }
+
+extension FavoritesViewController: DataPersistenceDelegate {
+    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        loadFavorites()
+    }
+    
+    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        loadFavorites()
+    }
+}
+
