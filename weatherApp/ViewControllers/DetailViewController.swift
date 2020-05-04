@@ -7,24 +7,29 @@
 //
 
 import UIKit
+import DataPersistence
 
 class DetailViewController: UIViewController {
 
+    private var placeName: String?
+    private var pickedWeather: DailyDatum?
+    let dataPersistence = DataPersistence<FavoriteItem>(filename: "favorites.plist")
+    
+    init(pickedWeather: DailyDatum, placeName: String) {
+        self.placeName = placeName
+        self.pickedWeather = pickedWeather
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.title = placeName
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

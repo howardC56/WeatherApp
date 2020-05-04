@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+struct PixPic: Codable {
+    let hits: [Pic]
+}
+
+
+struct Pic: Codable {
+    let id: Int
+    let pageURL: String
+    let type: String
+    let webformatURL: String
+    let largeImageURL: String
+}
+

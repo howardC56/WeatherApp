@@ -63,3 +63,20 @@ extension UIViewController {
       present(alertController, animated: true)
     }
 }
+
+extension Double {
+    func convertToDate(dateFormat: String) -> String {
+           let date = Date(timeIntervalSince1970: self)
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = dateFormat
+           dateFormatter.timeZone = .current
+           let localDate = dateFormatter.string(from: date)
+           return localDate
+       }
+    
+    func temperatureFormater() -> String {
+    let formatter = MeasurementFormatter()
+    let measurement = Measurement(value: self, unit: UnitTemperature.fahrenheit)
+    return formatter.string(from: measurement)
+    }
+}
