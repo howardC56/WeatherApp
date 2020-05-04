@@ -46,7 +46,7 @@ class FavoritesViewController: UIViewController {
     
     private func loadFavorites() {
         do {
-       favorites = try dataPersistence.loadItems()
+            favorites = try dataPersistence.loadItems().reversed()
         } catch {
             showAlert(title: "failed to load favorites", message: "\(error.localizedDescription)")
         }
