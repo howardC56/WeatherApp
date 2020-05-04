@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Lottie
 
 class MainCollectionViewCell: UICollectionViewCell {
     
-    public lazy var imageView: UIImageView = {
-        let image = UIImageView()
+    public lazy var imageView: AnimationView = {
+        let image = AnimationView()
         image.clipsToBounds = true
         image.layer.cornerRadius = 10
         image.backgroundColor = .white
-        image.image = UIImage(systemName: "photo")
+        image.loopMode = .loop
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
@@ -38,7 +40,48 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     public func configureCell(weather: DailyDatum) {
         dateLabel.text = Double(weather.time).convertToDate(dateFormat: "EEEE")
-        imageView.image = UIImage(systemName: "cloud.sun")
+        let icon = weather.icon.lowercased()
+        if icon.contains("clear") {
+        imageView.animation = Animation.named("clearDay")
+        } else if icon.contains("wind") {
+            imageView.animation = Animation.named("windy-weather")
+        } else if icon.contains("rain") {
+            imageView.animation = Animation.named("rainy-weather")
+        } else if icon.contains("drizzle") {
+            imageView.animation = Animation.named("rainy-weather")
+        } else if icon.contains("blizzard") {
+            imageView.animation = Animation.named("snow-storm-weather")
+        } else if icon.contains("snow") {
+            imageView.animation = Animation.named("snow-storm-weather")
+        } else if icon.contains("sunny") {
+            imageView.animation = Animation.named("clearDay")
+        } else if icon.contains("fair") {
+            imageView.animation = Animation.named("clearDay")
+        } else if icon.contains("sleet") {
+            imageView.animation = Animation.named("snow-storm-weather")
+        } else if icon.contains("wintry") {
+            imageView.animation = Animation.named("snow-storm-weather")
+        } else if icon.contains("wind") {
+            imageView.animation = Animation.named("windy-weather")
+        } else if icon.contains("flurries") {
+            imageView.animation = Animation.named("snow-storm-weather")
+        } else if icon.contains("showers") {
+            imageView.animation = Animation.named("rainy-weather")
+        } else if icon.contains("storm") {
+            imageView.animation = Animation.named("lightning-weather")
+        } else if icon.contains("cloudy") {
+        imageView.animation = Animation.named("cloudy")
+        } else if icon.contains("hazy") {
+        imageView.animation = Animation.named("haze-weather")
+            } else if icon.contains("fog") {
+            imageView.animation = Animation.named("haze-weather")
+        } else if icon.contains("smoke") {
+        imageView.animation = Animation.named("haze-weather")
+        } else {
+            imageView.animation = Animation.named("embarrassed")
+        }
+            
+        imageView.play()
         tempLabel.text = "High: \(weather.temperatureHigh.temperatureFormater()) \nLow: \(weather.temperatureLow.temperatureFormater())"
     }
     

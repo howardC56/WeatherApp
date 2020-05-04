@@ -7,4 +7,5 @@ target 'weatherApp' do
 
   # Pods for weatherApp
 pod 'Kingfisher'
+pod 'lottie-ios'
 end

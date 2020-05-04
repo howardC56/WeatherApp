@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = .yellow
-        tabBar.backgroundColor = .black
+        tabBar.barTintColor = .black
          viewControllers = [UINavigationController(rootViewController: searchViewController), UINavigationController(rootViewController: favoritesViewController)]
     }
     

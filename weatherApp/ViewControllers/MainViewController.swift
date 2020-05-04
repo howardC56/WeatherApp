@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class MainViewController: UIViewController {
 
@@ -109,7 +110,7 @@ extension MainViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        if let text = searchBar.text {
+        if let text = searchBar.text, text.count == 5, let _ = Int(text) {
             loadData(zip: text)
         } else {
             showAlert(title: "Try Again", message: "Please Check your zipcode")

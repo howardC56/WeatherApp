@@ -28,6 +28,18 @@
 		884F8084245F68E700C3D76A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8083245F68E700C3D76A /* Secrets.swift */; };
 		884F8086245F721C00C3D76A /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8085245F721C00C3D76A /* MainCollectionViewCell.swift */; };
 		884F8088245FB7AE00C3D76A /* FavoriteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8087245FB7AD00C3D76A /* FavoriteItem.swift */; };
+		884F808A245FBBA600C3D76A /* windy-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F8089245FBBA600C3D76A /* windy-weather.json */; };
+		884F808C245FBD2700C3D76A /* windy-cloud-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F808B245FBD2700C3D76A /* windy-cloud-weather.json */; };
+		884F808E245FBD5600C3D76A /* clearDay.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F808D245FBD5600C3D76A /* clearDay.json */; };
+		884F8090245FBD6C00C3D76A /* sunrise-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F808F245FBD6C00C3D76A /* sunrise-weather.json */; };
+		884F8092245FBD7E00C3D76A /* sunset-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F8091245FBD7D00C3D76A /* sunset-weather.json */; };
+		884F8094245FBDB800C3D76A /* rainy-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F8093245FBDB800C3D76A /* rainy-weather.json */; };
+		884F8098245FBE2A00C3D76A /* lightning-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F8097245FBE2A00C3D76A /* lightning-weather.json */; };
+		884F809C245FBE7E00C3D76A /* cloudy.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F809B245FBE7E00C3D76A /* cloudy.json */; };
+		884F809E245FBF0C00C3D76A /* clearNight.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F809D245FBF0B00C3D76A /* clearNight.json */; };
+		884F80A0245FC13500C3D76A /* snow-storm-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F809F245FC13500C3D76A /* snow-storm-weather.json */; };
+		884F80A2245FC24E00C3D76A /* haze-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F80A1245FC24D00C3D76A /* haze-weather.json */; };
+		884F80A4245FC6A700C3D76A /* embarrassed.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F80A3245FC6A700C3D76A /* embarrassed.json */; };
 		9205F5CD3C4EC8663C171393 /* Pods_weatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB125ED38F3F548003A594F5 /* Pods_weatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +67,18 @@
 		884F8083245F68E700C3D76A /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		884F8085245F721C00C3D76A /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		884F8087245FB7AD00C3D76A /* FavoriteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItem.swift; sourceTree = "<group>"; };
+		884F8089245FBBA600C3D76A /* windy-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "windy-weather.json"; sourceTree = "<group>"; };
+		884F808B245FBD2700C3D76A /* windy-cloud-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "windy-cloud-weather.json"; sourceTree = "<group>"; };
+		884F808D245FBD5600C3D76A /* clearDay.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clearDay.json; sourceTree = "<group>"; };
+		884F808F245FBD6C00C3D76A /* sunrise-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sunrise-weather.json"; sourceTree = "<group>"; };
+		884F8091245FBD7D00C3D76A /* sunset-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sunset-weather.json"; sourceTree = "<group>"; };
+		884F8093245FBDB800C3D76A /* rainy-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rainy-weather.json"; sourceTree = "<group>"; };
+		884F8097245FBE2A00C3D76A /* lightning-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lightning-weather.json"; sourceTree = "<group>"; };
+		884F809B245FBE7E00C3D76A /* cloudy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cloudy.json; sourceTree = "<group>"; };
+		884F809D245FBF0B00C3D76A /* clearNight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clearNight.json; sourceTree = "<group>"; };
+		884F809F245FC13500C3D76A /* snow-storm-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "snow-storm-weather.json"; sourceTree = "<group>"; };
+		884F80A1245FC24D00C3D76A /* haze-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "haze-weather.json"; sourceTree = "<group>"; };
+		884F80A3245FC6A700C3D76A /* embarrassed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = embarrassed.json; sourceTree = "<group>"; };
 		DDF4DBF864A6F2883EF93F5F /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApp.release.xcconfig"; path = "Target Support Files/Pods-weatherApp/Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		FB125ED38F3F548003A594F5 /* Pods_weatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,6 +127,7 @@
 			children = (
 				884F804F245C7C1800C3D76A /* AppDelegate.swift */,
 				884F8051245C7C1800C3D76A /* SceneDelegate.swift */,
+				884F80A5245FC6B600C3D76A /* WeatherJsons */,
 				884F8082245F68DA00C3D76A /* Secrets */,
 				884F807E245F64B400C3D76A /* ViewControllers */,
 				884F8081245F64EE00C3D76A /* Models */,
@@ -164,6 +189,25 @@
 				884F8083245F68E700C3D76A /* Secrets.swift */,
 			);
 			path = Secrets;
+			sourceTree = "<group>";
+		};
+		884F80A5245FC6B600C3D76A /* WeatherJsons */ = {
+			isa = PBXGroup;
+			children = (
+				884F8089245FBBA600C3D76A /* windy-weather.json */,
+				884F808D245FBD5600C3D76A /* clearDay.json */,
+				884F808F245FBD6C00C3D76A /* sunrise-weather.json */,
+				884F809D245FBF0B00C3D76A /* clearNight.json */,
+				884F808B245FBD2700C3D76A /* windy-cloud-weather.json */,
+				884F8093245FBDB800C3D76A /* rainy-weather.json */,
+				884F8097245FBE2A00C3D76A /* lightning-weather.json */,
+				884F809F245FC13500C3D76A /* snow-storm-weather.json */,
+				884F80A1245FC24D00C3D76A /* haze-weather.json */,
+				884F809B245FBE7E00C3D76A /* cloudy.json */,
+				884F80A3245FC6A700C3D76A /* embarrassed.json */,
+				884F8091245FBD7D00C3D76A /* sunset-weather.json */,
+			);
+			path = WeatherJsons;
 			sourceTree = "<group>";
 		};
 		8DCFA94AA94D901563E41494 /* Pods */ = {
@@ -241,8 +285,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884F809C245FBE7E00C3D76A /* cloudy.json in Resources */,
+				884F8090245FBD6C00C3D76A /* sunrise-weather.json in Resources */,
+				884F8092245FBD7E00C3D76A /* sunset-weather.json in Resources */,
+				884F80A4245FC6A700C3D76A /* embarrassed.json in Resources */,
+				884F8094245FBDB800C3D76A /* rainy-weather.json in Resources */,
+				884F808C245FBD2700C3D76A /* windy-cloud-weather.json in Resources */,
+				884F80A2245FC24E00C3D76A /* haze-weather.json in Resources */,
 				884F805C245C7C1C00C3D76A /* LaunchScreen.storyboard in Resources */,
 				884F8059245C7C1C00C3D76A /* Assets.xcassets in Resources */,
+				884F8098245FBE2A00C3D76A /* lightning-weather.json in Resources */,
+				884F809E245FBF0C00C3D76A /* clearNight.json in Resources */,
+				884F808A245FBBA600C3D76A /* windy-weather.json in Resources */,
+				884F808E245FBD5600C3D76A /* clearDay.json in Resources */,
+				884F80A0245FC13500C3D76A /* snow-storm-weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
