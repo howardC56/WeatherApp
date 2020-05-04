@@ -12,7 +12,7 @@ class FavoritesView: UIView {
     
     public lazy var tableView: UITableView = {
            let tableV = UITableView()
-           tableV.rowHeight = 100
+           tableV.rowHeight = 200
            tableV.backgroundColor = .white
            return tableV
        }()

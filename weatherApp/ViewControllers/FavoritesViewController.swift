@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import DataPersistence
 
 class FavoritesViewController: UIViewController {
     
+    private let dataPersistence: DataPersistence<Pic>
     let favoriteView = FavoritesView()
+    private var favorites = [Pic]() {
+        didSet {
+            favoriteView.tableView.reloadData()
+        }
+    }
+    
+    init(dataPersistence: DataPersistence<Pic>) {
+           self.dataPersistence = dataPersistence
+           super.init(nibName: nil, bundle: nil)
+       }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = favoriteView
@@ -18,9 +34,39 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadFavorites()
+        navigationItem.title = "Favorite Pictures"
+        favoriteView.tableView.delegate = self
+        favoriteView.tableView.dataSource = self
+        favoriteView.tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: "FavoriteTableViewCell")
     }
     
+    private func loadFavorites() {
+        do {
+       favorites = try dataPersistence.loadItems()
+        } catch {
+            showAlert(title: "failed to load favorites", message: "\(error.localizedDescription)")
+        }
+    }
 
 
+}
+
+extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        favorites.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as? FavoriteTableViewCell else {
+            fatalError("could not downcast to SearchViewTableViewCell")
+        }
+        let each = favorites[indexPath.row]
+        cell.configureCell(pic: each)
+        cell.isUserInteractionEnabled = false
+        return cell
+    }
+    
+    
 }

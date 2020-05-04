@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import DataPersistence
 
 class MainTabBarController: UITabBarController {
     
-    public lazy var searchViewController: MainViewController = {
-        let vc = MainViewController()
+   private let dataPersistence = DataPersistence<Pic>(filename: "favorites.plist")
+    
+    public lazy var searchViewController: UINavigationController = {
+        let vc = UINavigationController(rootViewController: MainViewController(dataPersistence: dataPersistence))
         vc.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass.circle.fill"))
         return vc
     }()
     
-    public lazy var favoritesViewController: FavoritesViewController = {
-        let vc = FavoritesViewController()
+    public lazy var favoritesViewController: UINavigationController = {
+        let vc = UINavigationController(rootViewController: FavoritesViewController(dataPersistence: dataPersistence))
         vc.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star"), selectedImage: UIImage(systemName: "star.fill"))
         return vc
     }()
@@ -26,7 +29,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         tabBar.tintColor = .yellow
         tabBar.barTintColor = .black
-         viewControllers = [UINavigationController(rootViewController: searchViewController), UINavigationController(rootViewController: favoritesViewController)]
+        viewControllers = [searchViewController, favoritesViewController]
     }
     
 

@@ -8,10 +8,12 @@
 
 import UIKit
 import Lottie
+import DataPersistence
 
 class MainViewController: UIViewController {
 
     let mainView = MainView()
+    private let dataPersistence: DataPersistence<Pic>
     
     private var zipcode = "11355" {
         didSet {
@@ -35,6 +37,15 @@ class MainViewController: UIViewController {
     
     override func loadView() {
         view = mainView
+    }
+    
+    init(dataPersistence: DataPersistence<Pic>) {
+        self.dataPersistence = dataPersistence
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -101,7 +112,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let pickedWeather = weathers[indexPath.row]
-        navigationController?.pushViewController(DetailViewController(pickedWeather: pickedWeather, placeName: place), animated: true)
+        navigationController?.pushViewController(DetailViewController(pickedWeather: pickedWeather, placeName: place, data: dataPersistence), animated: true)
     }
     
 }

@@ -15,16 +15,17 @@ class DetailViewController: UIViewController {
     let detailView = DetailView()
     private var placeName: String?
     private var pickedWeather: DailyDatum?
-    let dataPersistence = DataPersistence<Pic>(filename: "favorites.plist")
+    private let dataPersistence: DataPersistence<Pic>
     private var picture: Pic?
     
     override func loadView() {
         view = detailView
     }
     
-    init(pickedWeather: DailyDatum, placeName: String) {
+    init(pickedWeather: DailyDatum, placeName: String, data: DataPersistence<Pic>) {
         self.placeName = placeName
         self.pickedWeather = pickedWeather
+        self.dataPersistence = data
         super.init(nibName: nil, bundle: nil)
     }
     
