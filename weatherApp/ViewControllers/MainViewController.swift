@@ -86,7 +86,7 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async {
             switch result {
             case .failure(let error):
-                self?.showAlert(title: "error getting weather", message: error.localizedDescription)
+                self?.showAlert(title: "error getting weather", message: "\(error)")
             case .success(let weathers):
                 self?.weathers = weathers
             }

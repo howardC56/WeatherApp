@@ -19,18 +19,11 @@ struct WeatherForcast: Codable {
 
 struct Currently: Codable {
     let time: Int
-    let summary: Summary
+    let summary: String
     let icon: String
     let precipIntensity, precipProbability, temperature, apparentTemperature: Double
     let dewPoint, humidity, pressure, windSpeed: Double
     let windGust: Double
-}
-
-enum Summary: String, Codable {
-    case clear = "Clear"
-    case mostlyCloudy = "Mostly Cloudy"
-    case overcast = "Overcast"
-    case partlyCloudy = "Partly Cloudy"
 }
 
 struct Daily: Codable {
