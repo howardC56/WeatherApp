@@ -108,7 +108,7 @@ class DetailViewController: UIViewController {
     private func configureDetails() {
         DispatchQueue.main.async {
             if let picked = self.pickedWeather {
-                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater()) \nLow: \(picked.temperatureLow.temperatureFormater()) \nWind Speed: \(picked.windSpeed) mph \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
+                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater()) \nLow: \(picked.temperatureLow.temperatureFormater()) \nWind Speed: \(picked.windSpeed.speedFormater()) \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
     }
     }
 }

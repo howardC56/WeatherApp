@@ -79,4 +79,10 @@ extension Double {
     let measurement = Measurement(value: self, unit: UnitTemperature.fahrenheit)
     return formatter.string(from: measurement)
     }
+    
+    func speedFormater() -> String {
+        let formatter = MeasurementFormatter()
+        let measurement = Measurement(value: self, unit: UnitSpeed.milesPerHour)
+        return formatter.string(from: measurement)
+    }
 }
