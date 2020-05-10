@@ -13,7 +13,6 @@ class MainView: UIView {
     public lazy var search: UISearchBar = {
         let sb = UISearchBar()
         sb.backgroundColor = .white
-        sb.tintColor = .red
         sb.searchBarStyle = .minimal
         sb.keyboardType = .numbersAndPunctuation
         sb.placeholder = "Location ex: 90201 or 100-8111 japan"
