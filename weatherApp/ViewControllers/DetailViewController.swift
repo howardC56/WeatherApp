@@ -50,6 +50,10 @@ class DetailViewController: UIViewController {
             case .failure(let error):
                 self?.showAlert(title: "Check Place Name", message: "\(error.localizedDescription) \(error)")
             case .success(let pics):
+                guard !pics.isEmpty else {
+                    self?.detailView.imageView.image = UIImage(systemName: "photo.fill")
+                    return
+                }
                 let random = pics.randomElement() ?? pics[0]
                 let picture = random.webformatURL
                 self?.detailView.imageView.kf.setImage(with: URL(string: picture))

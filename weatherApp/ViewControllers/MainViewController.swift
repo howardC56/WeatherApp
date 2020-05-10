@@ -66,17 +66,17 @@ class MainViewController: UIViewController {
         } else if let searchZip = zip {
             zipcode = searchZip
         }
-        ZipCodeHelper.getLatLong(fromZipCode: zipcode) { result in
+        LocationHelper.getLatLong(fromZipCode: zipcode) { result in
             switch result {
-            case .success((let lat, let long, let placeName)):
+            case .success((let lat, let long, let placeName, let country)):
                 DispatchQueue.main.async {
-                    self.place = placeName
+                    self.place = "\(placeName), \(country)"
                     UserDefaults.standard.set(self.zipcode, forKey: "zipCode")
                     self.loadWeather(lat: lat, Long: long)
                 }
                 
             case .failure(let error):
-                self.showAlert(title: "Error Getting Lat Long", message: "\(error.localizedDescription)")
+                self.showAlert(title: "Error finding Location", message: "\(error.localizedDescription)")
             }
         }
     }
@@ -86,7 +86,7 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async {
             switch result {
             case .failure(let error):
-                self?.showAlert(title: "error getting weather", message: "\(error)")
+                self?.showAlert(title: "error getting weather", message: "\(error.localizedDescription)")
             case .success(let weathers):
                 self?.weathers = weathers
             }
@@ -121,7 +121,7 @@ extension MainViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        if let text = searchBar.text, text.count == 5, let _ = Int(text) {
+        if let text = searchBar.text {
             loadData(zip: text)
         } else {
             showAlert(title: "Try Again", message: "Please Check your zipcode")

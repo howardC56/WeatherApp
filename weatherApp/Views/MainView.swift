@@ -16,7 +16,7 @@ class MainView: UIView {
         sb.tintColor = .red
         sb.searchBarStyle = .minimal
         sb.keyboardType = .numbersAndPunctuation
-        sb.placeholder = "Enter ZipCode"
+        sb.placeholder = "Location ex: 90201 or 100-8111 japan"
         sb.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return sb
     }()

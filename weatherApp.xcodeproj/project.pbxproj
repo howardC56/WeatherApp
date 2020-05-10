@@ -20,7 +20,7 @@
 		884F806F245F630A00C3D76A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F806E245F630A00C3D76A /* DetailViewController.swift */; };
 		884F8071245F631800C3D76A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8070245F631800C3D76A /* DetailView.swift */; };
 		884F8073245F632200C3D76A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8072245F632200C3D76A /* Extensions.swift */; };
-		884F8075245F634100C3D76A /* ZipCodeGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8074245F634100C3D76A /* ZipCodeGeoCoder.swift */; };
+		884F8075245F634100C3D76A /* LocationGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8074245F634100C3D76A /* LocationGeoCoder.swift */; };
 		884F8077245F63B500C3D76A /* DarkSkysAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8076245F63B500C3D76A /* DarkSkysAPIClient.swift */; };
 		884F8079245F63F500C3D76A /* WeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F8078245F63F500C3D76A /* WeatherForcast.swift */; };
 		884F807B245F63FE00C3D76A /* PixPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F807A245F63FE00C3D76A /* PixPic.swift */; };
@@ -59,7 +59,7 @@
 		884F806E245F630A00C3D76A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		884F8070245F631800C3D76A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		884F8072245F632200C3D76A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		884F8074245F634100C3D76A /* ZipCodeGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeGeoCoder.swift; sourceTree = "<group>"; };
+		884F8074245F634100C3D76A /* LocationGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGeoCoder.swift; sourceTree = "<group>"; };
 		884F8076245F63B500C3D76A /* DarkSkysAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkysAPIClient.swift; sourceTree = "<group>"; };
 		884F8078245F63F500C3D76A /* WeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcast.swift; sourceTree = "<group>"; };
 		884F807A245F63FE00C3D76A /* PixPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixPic.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		884F8080245F64E000C3D76A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				884F8074245F634100C3D76A /* ZipCodeGeoCoder.swift */,
+				884F8074245F634100C3D76A /* LocationGeoCoder.swift */,
 				884F8076245F63B500C3D76A /* DarkSkysAPIClient.swift */,
 				884F807C245F64AF00C3D76A /* PixPicAPIClient.swift */,
 			);
@@ -361,7 +361,7 @@
 				884F8054245C7C1800C3D76A /* MainViewController.swift in Sources */,
 				884F806D245F62DB00C3D76A /* MainTabBarController.swift in Sources */,
 				884F807B245F63FE00C3D76A /* PixPic.swift in Sources */,
-				884F8075245F634100C3D76A /* ZipCodeGeoCoder.swift in Sources */,
+				884F8075245F634100C3D76A /* LocationGeoCoder.swift in Sources */,
 				884F8073245F632200C3D76A /* Extensions.swift in Sources */,
 				884F8077245F63B500C3D76A /* DarkSkysAPIClient.swift in Sources */,
 				884F80A7245FE0C300C3D76A /* FavoriteTableViewCell.swift in Sources */,
