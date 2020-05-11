@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
 
     let mainView = MainView()
     private let dataPersistence: DataPersistence<Pic>
-    
+    private var localName: String = "New York"
+    private var imperialUnit: Bool = true
     private var zipcode = "11355" {
         didSet {
             mainView.collectionView.reloadData()
@@ -48,11 +49,22 @@ class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    lazy private var changeTempUnit: UIBarButtonItem = {
+                         [unowned self] in
+                return UIBarButtonItem(image: UIImage(named: "temperature"), style: .plain, target: self, action: #selector(configureTempUnit(_:)))
+                         }()
+    
+    @objc func configureTempUnit(_ sender: UIBarButtonItem) {
+        imperialUnit.toggle()
+        mainView.collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "MainCollectionViewCell")
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
+        navigationItem.rightBarButtonItem = changeTempUnit
         navigationItem.title = place
         mainView.search.delegate = self
         loadData()
@@ -71,6 +83,7 @@ class MainViewController: UIViewController {
             case .success((let lat, let long, let placeName, let country)):
                 DispatchQueue.main.async {
                     self.place = "\(placeName), \(country)"
+                    self.localName = placeName
                     UserDefaults.standard.set(self.zipcode, forKey: "zipCode")
                     self.loadWeather(lat: lat, Long: long)
                 }
@@ -106,13 +119,13 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         let current = weathers[indexPath.row]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell else {
             fatalError() }
-        cell.configureCell(weather: current)
+        cell.configureCell(weather: current, imperialUnit: imperialUnit)
         return cell
     }
             
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let pickedWeather = weathers[indexPath.row]
-        navigationController?.pushViewController(DetailViewController(pickedWeather: pickedWeather, placeName: place, data: dataPersistence), animated: true)
+        navigationController?.pushViewController(DetailViewController(pickedWeather: pickedWeather, placeName: place, data: dataPersistence, localName: localName), animated: true)
     }
     
 }

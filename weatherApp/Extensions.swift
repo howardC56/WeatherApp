@@ -74,15 +74,33 @@ extension Double {
            return localDate
        }
     
-    func temperatureFormater() -> String {
+    func temperatureFormater(unit: UnitTemperature) -> String {
     let formatter = MeasurementFormatter()
-    let measurement = Measurement(value: self, unit: UnitTemperature.fahrenheit)
+    formatter.unitOptions = .providedUnit
+    formatter.numberFormatter.maximumFractionDigits = 2
+    let measurement = Measurement(value: self, unit: unit)
     return formatter.string(from: measurement)
     }
     
-    func speedFormater() -> String {
+    func speedFormater(unit: UnitSpeed) -> String {
         let formatter = MeasurementFormatter()
-        let measurement = Measurement(value: self, unit: UnitSpeed.milesPerHour)
+        let measurement = Measurement(value: self, unit: unit)
         return formatter.string(from: measurement)
+    }
+    
+    var fahrenheit: Measurement<UnitTemperature> {
+        return Measurement(value: self, unit: .fahrenheit)
+    }
+    
+    var celsius: Measurement<UnitTemperature> {
+           return Measurement(value: self, unit: .celsius)
+       }
+    
+    var milesPerHour: Measurement<UnitSpeed> {
+        return Measurement(value: self, unit: .milesPerHour)
+    }
+    
+    var kilometersPerHour: Measurement<UnitSpeed> {
+        return Measurement(value: self, unit: .kilometersPerHour)
     }
 }

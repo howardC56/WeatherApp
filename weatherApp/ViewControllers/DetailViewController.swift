@@ -18,15 +18,17 @@ class DetailViewController: UIViewController {
     private var pickedWeather: DailyDatum?
     private let dataPersistence: DataPersistence<Pic>
     private var picture: Pic?
+    private var localName: String?
     
     override func loadView() {
         view = detailView
     }
     
-    init(pickedWeather: DailyDatum, placeName: String, data: DataPersistence<Pic>) {
+    init(pickedWeather: DailyDatum, placeName: String, data: DataPersistence<Pic>, localName: String) {
         self.placeName = placeName
         self.pickedWeather = pickedWeather
         self.dataPersistence = data
+        self.localName = localName
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,7 +45,7 @@ class DetailViewController: UIViewController {
     }
     
     private func loadPic() {
-        if let placeName = placeName {
+        if let placeName = localName {
         PhotoApiClient.getPhotos(search: placeName) { [weak self] (result) in
             DispatchQueue.main.async {
             switch result {
@@ -108,7 +110,7 @@ class DetailViewController: UIViewController {
     private func configureDetails() {
         DispatchQueue.main.async {
             if let picked = self.pickedWeather {
-                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater()) \nLow: \(picked.temperatureLow.temperatureFormater()) \nWind Speed: \(picked.windSpeed.speedFormater()) \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
+                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) \nLow: \(picked.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit)) \nWind Speed: \(picked.windSpeed.speedFormater(unit: UnitSpeed.milesPerHour)) \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
     }
     }
 }

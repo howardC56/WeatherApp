@@ -40,7 +40,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    public func configureCell(weather: DailyDatum) {
+    public func configureCell(weather: DailyDatum, imperialUnit: Bool) {
         DispatchQueue.main.async {
             self.dateLabel.text = Double(weather.time).convertToDate(dateFormat: "EEEE")
         let icon = weather.icon.lowercased()
@@ -83,9 +83,14 @@ class MainCollectionViewCell: UICollectionViewCell {
         } else {
             self.imageView.animation = Animation.named("embarrassed")
         }
-            
             self.imageView.play()
-            self.tempLabel.text = "High: \(weather.temperatureHigh.temperatureFormater()) \nLow: \(weather.temperatureLow.temperatureFormater())"
+            if imperialUnit == true {
+                self.tempLabel.text = "High: \(weather.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) \nLow: \(weather.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit))"
+            } else {
+                let high = weather.temperatureHigh.fahrenheit.converted(to: .celsius).value
+                let low = weather.temperatureLow.fahrenheit.converted(to: .celsius).value
+                self.tempLabel.text = "High: \(high.temperatureFormater(unit: .celsius)) \nLow: \(low.temperatureFormater(unit: .celsius))"
+            }
     }
     }
     
