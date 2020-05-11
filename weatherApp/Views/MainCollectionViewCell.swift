@@ -64,8 +64,6 @@ class MainCollectionViewCell: UICollectionViewCell {
             self.imageView.animation = Animation.named("snow-storm-weather")
         } else if icon.contains("wintry") {
             self.imageView.animation = Animation.named("snow-storm-weather")
-        } else if icon.contains("wind") {
-            self.imageView.animation = Animation.named("windy-weather")
         } else if icon.contains("flurries") {
             self.imageView.animation = Animation.named("snow-storm-weather")
         } else if icon.contains("showers") {

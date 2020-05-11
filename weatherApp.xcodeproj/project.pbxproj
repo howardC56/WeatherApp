@@ -40,6 +40,7 @@
 		884F80A2245FC24E00C3D76A /* haze-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F80A1245FC24D00C3D76A /* haze-weather.json */; };
 		884F80A4245FC6A700C3D76A /* embarrassed.json in Resources */ = {isa = PBXBuildFile; fileRef = 884F80A3245FC6A700C3D76A /* embarrassed.json */; };
 		884F80A7245FE0C300C3D76A /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F80A6245FE0C300C3D76A /* FavoriteTableViewCell.swift */; };
+		884F80A92469CE8D00C3D76A /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884F80A82469CE8C00C3D76A /* UIImage+Gif.swift */; };
 		9205F5CD3C4EC8663C171393 /* Pods_weatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB125ED38F3F548003A594F5 /* Pods_weatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		884F80A1245FC24D00C3D76A /* haze-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "haze-weather.json"; sourceTree = "<group>"; };
 		884F80A3245FC6A700C3D76A /* embarrassed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = embarrassed.json; sourceTree = "<group>"; };
 		884F80A6245FE0C300C3D76A /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		884F80A82469CE8C00C3D76A /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		DDF4DBF864A6F2883EF93F5F /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApp.release.xcconfig"; path = "Target Support Files/Pods-weatherApp/Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		FB125ED38F3F548003A594F5 /* Pods_weatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				884F804F245C7C1800C3D76A /* AppDelegate.swift */,
+				884F80A82469CE8C00C3D76A /* UIImage+Gif.swift */,
 				884F8051245C7C1800C3D76A /* SceneDelegate.swift */,
 				884F80A5245FC6B600C3D76A /* WeatherJsons */,
 				884F8082245F68DA00C3D76A /* Secrets */,
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884F80A92469CE8D00C3D76A /* UIImage+Gif.swift in Sources */,
 				884F8069245F62A400C3D76A /* FavoritesView.swift in Sources */,
 				884F8084245F68E700C3D76A /* Secrets.swift in Sources */,
 				884F8079245F63F500C3D76A /* WeatherForcast.swift in Sources */,

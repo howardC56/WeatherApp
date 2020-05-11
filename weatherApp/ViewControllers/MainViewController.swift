@@ -97,13 +97,56 @@ class MainViewController: UIViewController {
     private func loadWeather(lat: Double, Long: Double) {
         DarkSkysAPIClient.getWeather(lat: lat, long: Long) { [weak self] (result) in
             DispatchQueue.main.async {
-            switch result {
-            case .failure(let error):
-                self?.showAlert(title: "error getting weather", message: "\(error.localizedDescription)")
-            case .success(let weathers):
-                self?.weathers = weathers
+                switch result {
+                case .failure(let error):
+                    self?.showAlert(title: "error getting weather", message: "\(error.localizedDescription)")
+                case .success(let weathers):
+                    self?.weathers = weathers
+                    self?.setWeatherGif()
+                }
             }
         }
+    }
+    
+    func setWeatherGif() {
+        DispatchQueue.main.async {
+            if self.weathers[0].icon.contains("clear"){
+                self.mainView.imageView.loadGif(asset: "sunny")
+            } else if self.weathers[0].icon.contains("wind") {
+                self.mainView.imageView.loadGif(asset: "windy")
+            } else if self.weathers[0].icon.contains("rain") {
+                self.mainView.imageView.loadGif(asset: "rainCloud")
+            } else if self.weathers[0].icon.contains("drizzle") {
+                self.mainView.imageView.loadGif(asset: "rainCloud")
+            } else if self.weathers[0].icon.contains("blizzard") {
+                self.mainView.imageView.loadGif(asset: "snowman")
+            } else if self.weathers[0].icon.contains("snow") {
+                self.mainView.imageView.loadGif(asset: "snowman")
+            } else if self.weathers[0].icon.contains("sunny") {
+                self.mainView.imageView.loadGif(asset: "sunny")
+            } else if self.weathers[0].icon.contains("fair") {
+                self.mainView.imageView.loadGif(asset: "sunny")
+            } else if self.weathers[0].icon.contains("sleet") {
+                self.mainView.imageView.loadGif(asset: "snowman")
+            } else if self.weathers[0].icon.contains("wintry") {
+                self.mainView.imageView.loadGif(asset: "snowman")
+            } else if self.weathers[0].icon.contains("flurries") {
+                self.mainView.imageView.loadGif(asset: "snowman")
+            } else if self.weathers[0].icon.contains("showers") {
+                self.mainView.imageView.loadGif(asset: "rainCloud")
+            } else if self.weathers[0].icon.contains("storm") {
+                self.mainView.imageView.loadGif(asset: "sunny")
+            } else if self.weathers[0].icon.contains("cloudy") {
+                self.mainView.imageView.loadGif(asset: "sunCloud")
+            } else if self.weathers[0].icon.contains("hazy") {
+                self.mainView.imageView.loadGif(asset: "foggy")
+            } else if self.weathers[0].icon.contains("fog") {
+                self.mainView.imageView.loadGif(asset: "foggy")
+            } else if self.weathers[0].icon.contains("smoke") {
+                self.mainView.imageView.loadGif(asset: "foggy")
+            } else {
+                self.mainView.imageView.loadGif(asset: "defaultWeather")
+            }
         }
     }
 

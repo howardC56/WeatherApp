@@ -19,6 +19,14 @@ class MainView: UIView {
         sb.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return sb
     }()
+    
+    public lazy var imageView: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.backgroundColor = .clear
+        image.clipsToBounds = true
+        return image
+    }()
 
     public lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -43,6 +51,7 @@ class MainView: UIView {
     private func commonInit() {
         backgroundColor = .systemTeal
         searchBarSetup()
+        imageViewSetup()
         collectionViewSetup()
     }
     
@@ -51,8 +60,13 @@ class MainView: UIView {
         search.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0)
     }
     
+    private func imageViewSetup() {
+        addSubview(imageView)
+        imageView.anchor(top: search.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, height: 200)
+    }
+    
     private func collectionViewSetup() {
         addSubview(collectionView)
-        collectionView.anchor(top: search.bottomAnchor, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 0, paddingBottom: 60, paddingRight: 0)
+        collectionView.anchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 0, paddingBottom: 30, paddingRight: 0)
     }
 }
