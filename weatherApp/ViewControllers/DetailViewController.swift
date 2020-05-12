@@ -110,7 +110,10 @@ class DetailViewController: UIViewController {
     private func configureDetails() {
         DispatchQueue.main.async {
             if let picked = self.pickedWeather {
-                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) \nLow: \(picked.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit)) \nWind Speed: \(picked.windSpeed.speedFormater(unit: UnitSpeed.milesPerHour)) \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
+                let highCelsius = picked.temperatureHigh.fahrenheit.converted(to: .celsius).value
+                let lowCelsius = picked.temperatureLow.fahrenheit.converted(to: .celsius).value
+                let windKMP = picked.windSpeed.milesPerHour.converted(to: .kilometersPerHour).value
+                self.detailView.descriptionLabel.text = "\(picked.summary) \nDate: \(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHigh: \(picked.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(highCelsius.temperatureFormater(unit: .celsius)) \nLow: \(picked.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(lowCelsius.temperatureFormater(unit: .celsius)) \nWind Speed: \(picked.windSpeed.speedFormater(unit: UnitSpeed.milesPerHour)) / \(windKMP.speedFormater(unit: .kilometersPerHour)) \nDew Point: \(picked.dewPoint) \nHumidity: \(picked.humidity) \nChance Of Rain: \(picked.precipProbability * 100)%"
     }
     }
 }

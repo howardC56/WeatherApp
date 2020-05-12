@@ -84,6 +84,8 @@ extension Double {
     
     func speedFormater(unit: UnitSpeed) -> String {
         let formatter = MeasurementFormatter()
+        formatter.unitOptions = .providedUnit
+        formatter.numberFormatter.maximumFractionDigits = 2
         let measurement = Measurement(value: self, unit: unit)
         return formatter.string(from: measurement)
     }
