@@ -1,7 +1,7 @@
 PODS:
-  - Kingfisher (5.13.2):
-    - Kingfisher/Core (= 5.13.2)
-  - Kingfisher/Core (5.13.2)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
   - lottie-ios (3.1.8)
 
 DEPENDENCIES:
@@ -14,7 +14,7 @@ SPEC REPOS:
     - lottie-ios
 
 SPEC CHECKSUMS:
-  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
 
 PODFILE CHECKSUM: ae1ebd0bde14c8be1d4399d335a1488ad3ad20ee

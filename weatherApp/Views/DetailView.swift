@@ -28,12 +28,12 @@ class DetailView: UIView {
         label.textColor = .black
         label.textAlignment = .left
         label.layer.cornerRadius = 10
-        label.layer.borderWidth = 1
-        label.layer.borderColor = UIColor.black.cgColor
+//        label.layer.borderWidth = 1
+//        label.layer.borderColor = UIColor.black.cgColor
         label.text = "Date Posted: , UserName: , Description:"
         label.sizeToFit()
         label.isEditable = false
-        label.backgroundColor = .white
+        label.backgroundColor = .systemTeal
         return label
     }()
     
@@ -47,7 +47,7 @@ class DetailView: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .systemTeal
         imageViewConstraints()
         TextLabelConstraints()
     }
