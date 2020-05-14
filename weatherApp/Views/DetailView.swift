@@ -24,13 +24,11 @@ class DetailView: UIView {
     
     public lazy var descriptionLabel: UITextView = {
         let label = UITextView()
-        label.font = UIFont(name: "Kohinoor Telugu", size: 16)
+        label.font = UIFont(name: "Kohinoor Telugu", size: 20)
         label.textColor = .black
         label.textAlignment = .left
         label.layer.cornerRadius = 10
-//        label.layer.borderWidth = 1
-//        label.layer.borderColor = UIColor.black.cgColor
-        label.text = "Date Posted: , UserName: , Description:"
+        label.text = "Description:"
         label.sizeToFit()
         label.isEditable = false
         label.backgroundColor = .systemTeal
