@@ -40,8 +40,8 @@ class FavoritesViewController: UIViewController {
         favoriteView.tableView.delegate = self
         favoriteView.tableView.dataSource = self
         favoriteView.tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: "FavoriteTableViewCell")
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
-        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black ]
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.8576713204, green: 1, blue: 0.9821267724, alpha: 1)
     }
     
     private func loadFavorites() {

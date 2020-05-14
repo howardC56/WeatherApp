@@ -14,6 +14,7 @@ class FavoritesView: UIView {
            let tableV = UITableView()
            tableV.rowHeight = 200
            tableV.backgroundColor = .white
+           tableV.tableFooterView = UIView()
            return tableV
        }()
     
@@ -27,6 +28,7 @@ class FavoritesView: UIView {
     }
     
     private func commonInit() {
+        backgroundColor = .systemTeal
         tableViewSetup()
     }
     
