@@ -64,11 +64,16 @@ class MainViewController: UIViewController {
         mainView.collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "MainCollectionViewCell")
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
+        setupNavigationBar()
+        mainView.search.delegate = self
+        loadData()
+    }
+    
+    private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = changeTempUnit
         navigationItem.title = place
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!]
-        mainView.search.delegate = self
-        loadData()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
     
     private func loadData(zip: String? = nil) {
