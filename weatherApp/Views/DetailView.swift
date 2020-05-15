@@ -24,7 +24,7 @@ class DetailView: UIView {
     
     public lazy var descriptionLabel: UITextView = {
         let label = UITextView()
-        label.font = UIFont(name: "Kohinoor Telugu", size: 20)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         label.textColor = .black
         label.textAlignment = .left
         label.layer.cornerRadius = 10

@@ -113,7 +113,25 @@ class DetailViewController: UIViewController {
                 let highCelsius = picked.temperatureHigh.fahrenheit.converted(to: .celsius).value
                 let lowCelsius = picked.temperatureLow.fahrenheit.converted(to: .celsius).value
                 let windKMP = picked.windSpeed.milesPerHour.converted(to: .kilometersPerHour).value
-                self.detailView.descriptionLabel.text = "\(picked.summary) \nDATE: \n\(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHIGH: \n\(picked.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(highCelsius.temperatureFormater(unit: .celsius)) \nLOW: \n\(picked.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(lowCelsius.temperatureFormater(unit: .celsius)) \nWIND SPEED: \n\(picked.windSpeed.speedFormater(unit: UnitSpeed.milesPerHour)) / \(windKMP.speedFormater(unit: .kilometersPerHour)) \nDEW POINT: \n\(picked.dewPoint) \nHUMIDITY: \n\(picked.humidity) \nCHANCE OF RAIN: \n\(picked.precipProbability * 100)%"
+                self.detailView.descriptionLabel.attributedText =
+                NSMutableAttributedString()
+                .normal("\(picked.summary)\n\n")
+                .bold("DATE\n")
+                .normal("\(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy"))\n\n")
+                .bold("HIGH\n")
+                .normal("\(picked.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(highCelsius.temperatureFormater(unit: .celsius))\n\n")
+                .bold("LOW\n")
+                .normal("\(picked.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(lowCelsius.temperatureFormater(unit: .celsius))\n\n")
+                .bold("WIND SPEED\n")
+                .normal("\(picked.windSpeed.speedFormater(unit: UnitSpeed.milesPerHour)) / \(windKMP.speedFormater(unit: .kilometersPerHour))\n\n")
+                .bold("DEW POINT\n")
+                .normal("\(picked.dewPoint)\n\n")
+                .bold("HUMIDITY\n")
+                .normal("\(picked.humidity)\n\n")
+                .bold("CHANCE OF RAIN\n")
+                .normal("\(picked.precipProbability * 100)%\n")
+                
+//                "\(picked.summary) \nDATE: \n\(Double(picked.time).convertToDate(dateFormat: "EEEE, MMM d, yyyy")) \nHIGH: \n\(picked.temperatureHigh.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(highCelsius.temperatureFormater(unit: .celsius)) \nLOW: \n\(picked.temperatureLow.temperatureFormater(unit: UnitTemperature.fahrenheit)) / \(lowCelsius.temperatureFormater(unit: .celsius)) \nWIND SPEED: \n\(picked.windSpeed.speedFormater(unit: UnitSpeed.milesPerHour)) / \(windKMP.speedFormater(unit: .kilometersPerHour)) \nDEW POINT: \n\(picked.dewPoint) \nHUMIDITY: \n\(picked.humidity) \nCHANCE OF RAIN: \n\(picked.precipProbability * 100)%"
     }
     }
 }

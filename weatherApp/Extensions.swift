@@ -106,3 +106,36 @@ extension Double {
         return Measurement(value: self, unit: .kilometersPerHour)
     }
 }
+
+extension NSMutableAttributedString {
+var fontSize:CGFloat { return 20 }
+var boldFont:UIFont { return UIFont(name: "HelveticaNeue-CondensedBold", size: fontSize) ?? UIFont.boldSystemFont(ofSize: fontSize) }
+var normalFont:UIFont { return UIFont(name: "HelveticaNeue", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)}
+
+func bold(_ value:String) -> NSMutableAttributedString {
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .left
+    paragraphStyle.firstLineHeadIndent = 15.0
+    let attributes:[NSAttributedString.Key : Any] = [
+        .font : boldFont,
+        .paragraphStyle: paragraphStyle
+    ]
+
+    self.append(NSAttributedString(string: value, attributes:attributes))
+    return self
+}
+
+func normal(_ value:String) -> NSMutableAttributedString {
+    let paragraphStyle = NSMutableParagraphStyle()
+       paragraphStyle.alignment = .left
+       paragraphStyle.firstLineHeadIndent = 15.0
+
+    let attributes:[NSAttributedString.Key : Any] = [
+        .font : normalFont,
+        .paragraphStyle: paragraphStyle
+    ]
+
+    self.append(NSAttributedString(string: value, attributes:attributes))
+    return self
+}
+}
