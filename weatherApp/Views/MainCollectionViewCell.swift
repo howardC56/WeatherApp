@@ -27,6 +27,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
+        label.font = UIFont(name: "HelveticaNeue-CondensedBold", size: 25)
         label.backgroundColor = .white
         return label
     }()
@@ -36,6 +37,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.textColor = .black
         label.backgroundColor = .white
+        label.font = UIFont(name: "HelveticaNeue-CondensedBold", size: 20)
         label.numberOfLines = 2
         return label
     }()
