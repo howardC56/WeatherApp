@@ -77,7 +77,7 @@ extension Double {
     func temperatureFormater(unit: UnitTemperature) -> String {
     let formatter = MeasurementFormatter()
     formatter.unitOptions = .providedUnit
-    formatter.numberFormatter.maximumFractionDigits = 2
+    formatter.numberFormatter.maximumFractionDigits = 0
     let measurement = Measurement(value: self, unit: unit)
     return formatter.string(from: measurement)
     }
