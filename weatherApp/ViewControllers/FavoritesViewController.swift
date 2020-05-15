@@ -42,6 +42,7 @@ class FavoritesViewController: UIViewController {
         favoriteView.tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: "FavoriteTableViewCell")
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black ]
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.8576713204, green: 1, blue: 0.9821267724, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!]
     }
     
     private func loadFavorites() {

@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
         mainView.collectionView.dataSource = self
         navigationItem.rightBarButtonItem = changeTempUnit
         navigationItem.title = place
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!]
         mainView.search.delegate = self
         loadData()
     }
