@@ -13,9 +13,9 @@ A swift package for local data Persistence and networking was also used in the p
 
 <br />
 
-![gif](gifs/gif.gif)  
+![gif](gifs/gif1.gif)  
 
-![gif](gifs/gif1.gif)
+![gif](gifs/gif2.gif)
 
 <br />
 
